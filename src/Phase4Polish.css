@@ -1,0 +1,44 @@
+:root{
+  --fc-bg:#0B0F19;--fc-surface:#171E2E;--fc-surface-2:#1d2638;--fc-cyan:#00E5FF;--fc-green:#39FF14;--fc-cta:#FF007F;--fc-orange:#FF5722;--fc-text:#fff;--fc-muted:#94A3B8;--fc-border:rgba(148,163,184,.14);--fc-shadow:0 14px 40px rgba(0,0,0,.24);--fc-radius:18px;
+}
+html{scroll-behavior:smooth}body{background:var(--fc-bg);color:var(--fc-text)}
+*,*::before,*::after{box-sizing:border-box}
+button,input,textarea,select{font:inherit}
+button{transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,opacity .18s ease}
+button:not(:disabled):hover{transform:translateY(-1px)}button:disabled{cursor:not-allowed;opacity:.55}
+:focus-visible{outline:2px solid var(--fc-cyan);outline-offset:3px}
+.client-details-page,.client-portal-page,.admin-layout,.trainer-platform-layout,.dashboard-page,.clients-page,.packages-page,.transformations-page,.subscription-requests-page,.admin-chat-page{background:var(--fc-bg)!important;color:var(--fc-text)}
+.client-details-panel,.training-day-card,.nutrition-plan-card,.program-header-card,.exercise-card,.meal-card,.client-details-stat,.client-subscription-row,.template-card,.dashboard-card,.stat-card,.client-card,.package-card,.transformation-card,.chat-panel,.modal-content,.client-modal,.admin-card{border-color:var(--fc-border)!important;box-shadow:var(--fc-shadow)}
+.client-details-panel,.training-day-card,.nutrition-plan-card,.program-header-card,.exercise-card,.meal-card,.client-details-stat,.client-subscription-row,.template-card,.dashboard-card,.stat-card,.client-card,.package-card,.transformation-card,.chat-panel,.modal-content,.client-modal,.admin-card{background:var(--fc-surface)!important}
+input,textarea,select{background:#0f1522!important;color:var(--fc-text)!important;border:1px solid var(--fc-border)!important;border-radius:12px!important}
+input::placeholder,textarea::placeholder{color:#64748b}
+input:focus,textarea:focus,select:focus{border-color:rgba(0,229,255,.55)!important;box-shadow:0 0 0 3px rgba(0,229,255,.09)!important;outline:none}
+.primary,.btn-primary,.button-primary,.cta-button{background:linear-gradient(135deg,var(--fc-cyan),#0097a7)!important;color:#041016!important;border:0!important;box-shadow:0 8px 24px rgba(0,229,255,.16)!important;font-weight:800}
+.danger,.btn-danger{background:rgba(255,0,127,.12)!important;color:#ff72b4!important;border-color:rgba(255,0,127,.28)!important}
+.client-details-eyebrow,.eyebrow,.section-eyebrow{color:var(--fc-cyan)!important;letter-spacing:.12em}
+h1,h2,h3,h4,strong{color:var(--fc-text)}p,small,.muted,.description{color:var(--fc-muted)}
+.client-details-actions button.active,.admin-nav a.active,.sidebar-link.active{background:rgba(0,229,255,.1)!important;color:var(--fc-cyan)!important;border-color:rgba(0,229,255,.24)!important}
+.client-details-progress-bar,.progress-bar{background:#0e1522!important}.client-details-progress-bar span,.progress-bar span{background:linear-gradient(90deg,var(--fc-cyan),var(--fc-green))!important}
+.status-active,.badge-active,.success{color:var(--fc-green)!important;background:rgba(57,255,20,.09)!important;border-color:rgba(57,255,20,.2)!important}
+.status-pending,.badge-pending{color:#ffd166!important;background:rgba(255,209,102,.09)!important}
+.status-rejected,.status-expired,.badge-danger{color:#ff72b4!important;background:rgba(255,0,127,.09)!important}
+.status-paused{color:#ff9f43!important;background:rgba(255,87,34,.09)!important}
+.modal-overlay,.client-modal-overlay{background:rgba(3,6,12,.78)!important;backdrop-filter:blur(8px)}
+.client-modal-header,.modal-header{border-bottom:1px solid var(--fc-border)!important}
+.client-modal-close,.modal-close{color:var(--fc-muted)!important}.client-modal-close:hover,.modal-close:hover{color:var(--fc-text)!important;background:rgba(255,255,255,.06)!important}
+.table-row:hover,.client-subscription-row:hover,.client-card:hover,.package-card:hover,.transformation-card:hover{border-color:rgba(0,229,255,.28)!important;background:var(--fc-surface-2)!important}
+@media(max-width:900px){
+  .client-details-header,.training-toolbar,.client-details-panel-title{gap:16px;flex-wrap:wrap}
+  .toolbar-actions,.client-details-header-actions{width:100%;display:flex;flex-wrap:wrap;gap:8px}
+  .toolbar-actions button,.client-details-header-actions button{flex:1;min-width:130px}
+}
+@media(max-width:640px){
+  .client-details-page,.admin-layout,.trainer-platform-layout{padding-left:12px!important;padding-right:12px!important}
+  .client-details-profile{padding:18px!important;gap:12px!important}
+  .client-details-stat{min-height:82px}
+  .client-details-actions{display:grid!important;grid-template-columns:1fr 1fr!important}
+  .client-details-actions button{min-height:48px}
+  .toolbar-actions button,.client-details-header-actions button{min-height:44px}
+  .client-modal{width:calc(100vw - 24px)!important;max-height:90vh!important;overflow:auto}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

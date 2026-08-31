@@ -1,0 +1,397 @@
+/* =========================================================
+   FITCOACH — TRAINER PLATFORM / PHASE 3
+   Unified cyber-dark visual system
+   Scope: trainer/admin pages only
+   ========================================================= */
+
+.trainer-platform-layout {
+  --tp-bg: #0B0F19;
+  --tp-surface: #171E2E;
+  --tp-surface-2: #111827;
+  --tp-surface-3: #202A3D;
+  --tp-cyan: #00E5FF;
+  --tp-green: #39FF14;
+  --tp-pink: #FF007F;
+  --tp-orange: #FF5722;
+  --tp-text: #FFFFFF;
+  --tp-muted: #94A3B8;
+  --tp-border: rgba(148,163,184,.16);
+  --tp-shadow: 0 18px 50px rgba(0,0,0,.28);
+  min-height: 100vh;
+  background: var(--tp-bg) !important;
+  color: var(--tp-text);
+}
+
+.trainer-platform-layout,
+.trainer-platform-layout * {
+  box-sizing: border-box;
+}
+
+.trainer-platform-layout .admin-sidebar {
+  background: linear-gradient(180deg,#0E1422 0%,#0B0F19 100%) !important;
+  border-left: 1px solid var(--tp-border) !important;
+  box-shadow: 20px 0 60px rgba(0,0,0,.22);
+}
+
+.trainer-platform-layout .admin-sidebar-brand {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--tp-border);
+}
+
+.trainer-platform-layout .admin-brand-logo {
+  background: linear-gradient(135deg,var(--tp-cyan),#087F99) !important;
+  color: #041018 !important;
+  box-shadow: 0 0 28px rgba(0,229,255,.18);
+}
+
+.trainer-platform-layout .admin-brand-text strong {
+  color: var(--tp-text) !important;
+}
+
+.trainer-platform-layout .admin-brand-text span,
+.trainer-platform-layout .admin-nav-title,
+.trainer-platform-layout .admin-profile span {
+  color: var(--tp-muted) !important;
+}
+
+.trainer-platform-layout .admin-profile {
+  margin: 16px;
+  padding: 14px;
+  background: rgba(23,30,46,.72) !important;
+  border: 1px solid var(--tp-border);
+  border-radius: 18px;
+}
+
+.trainer-platform-layout .admin-profile-avatar {
+  background: rgba(0,229,255,.1) !important;
+  border: 1px solid rgba(0,229,255,.25);
+}
+
+.trainer-platform-layout .admin-sidebar-link {
+  margin: 5px 12px;
+  color: #CBD5E1 !important;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  transition: .2s ease;
+}
+
+.trainer-platform-layout .admin-sidebar-link:hover {
+  color: var(--tp-text) !important;
+  background: rgba(0,229,255,.06) !important;
+  border-color: rgba(0,229,255,.12);
+}
+
+.trainer-platform-layout .admin-sidebar-link.active {
+  color: #061018 !important;
+  background: linear-gradient(135deg,var(--tp-cyan),#27C7DD) !important;
+  box-shadow: 0 10px 28px rgba(0,229,255,.16);
+  font-weight: 800;
+}
+
+.trainer-platform-layout .admin-sidebar-link.active .admin-nav-icon {
+  filter: none;
+}
+
+.trainer-platform-layout .admin-sidebar-divider {
+  background: var(--tp-border) !important;
+}
+
+.trainer-platform-layout .admin-logout-button {
+  color: #CBD5E1 !important;
+  border: 1px solid var(--tp-border) !important;
+  background: rgba(23,30,46,.6) !important;
+  border-radius: 14px;
+}
+
+.trainer-platform-layout .admin-logout-button:hover {
+  color: #fff !important;
+  border-color: rgba(255,0,127,.35) !important;
+  background: rgba(255,0,127,.08) !important;
+}
+
+.trainer-platform-layout .admin-main-content {
+  background: var(--tp-bg) !important;
+}
+
+/* Shared trainer page surfaces */
+.trainer-platform-layout .dashboard-page,
+.trainer-platform-layout .clients-page,
+.trainer-platform-layout .packages-page,
+.trainer-platform-layout .training-page,
+.trainer-platform-layout .subscription-requests-page,
+.trainer-platform-layout .admin-chat-page {
+  background: var(--tp-bg) !important;
+  color: var(--tp-text) !important;
+}
+
+.trainer-platform-layout .dashboard-header,
+.trainer-platform-layout .clients-header,
+.trainer-platform-layout .packages-page-header,
+.trainer-platform-layout .subscription-requests-header,
+.trainer-platform-layout .admin-chat-header {
+  background: transparent !important;
+  border-color: var(--tp-border) !important;
+}
+
+.trainer-platform-layout .dashboard-eyebrow,
+.trainer-platform-layout .subscription-header-eyebrow,
+.trainer-platform-layout .section-heading,
+.trainer-platform-layout .gold-label {
+  color: var(--tp-cyan) !important;
+}
+
+.trainer-platform-layout h1,
+.trainer-platform-layout h2,
+.trainer-platform-layout h3,
+.trainer-platform-layout h4,
+.trainer-platform-layout strong,
+.trainer-platform-layout .section-title {
+  color: var(--tp-text) !important;
+}
+
+.trainer-platform-layout p,
+.trainer-platform-layout small,
+.trainer-platform-layout label,
+.trainer-platform-layout .package-description,
+.trainer-platform-layout .client-email,
+.trainer-platform-layout .subscription-request-package-meta {
+  color: var(--tp-muted) !important;
+}
+
+/* Cards */
+.trainer-platform-layout .dashboard-stat-card,
+.trainer-platform-layout .dashboard-finance-card,
+.trainer-platform-layout .dashboard-panel,
+.trainer-platform-layout .client-card,
+.trainer-platform-layout .package-card,
+.trainer-platform-layout .luxury-card,
+.trainer-platform-layout .subscription-stat-card,
+.trainer-platform-layout .subscription-request-card,
+.trainer-platform-layout .program-card,
+.trainer-platform-layout .training-box,
+.trainer-platform-layout .admin-chat-box {
+  background: linear-gradient(145deg,rgba(23,30,46,.98),rgba(17,24,39,.98)) !important;
+  border: 1px solid var(--tp-border) !important;
+  box-shadow: var(--tp-shadow) !important;
+  border-radius: 22px !important;
+}
+
+.trainer-platform-layout .dashboard-stat-card:hover,
+.trainer-platform-layout .client-card:hover,
+.trainer-platform-layout .package-card:hover,
+.trainer-platform-layout .subscription-request-card:hover {
+  border-color: rgba(0,229,255,.28) !important;
+  transform: translateY(-2px);
+}
+
+.trainer-platform-layout .dashboard-stat-icon,
+.trainer-platform-layout .dashboard-finance-icon,
+.trainer-platform-layout .client-avatar,
+.trainer-platform-layout .subscription-request-client-avatar {
+  background: rgba(0,229,255,.08) !important;
+  border: 1px solid rgba(0,229,255,.18);
+}
+
+/* Primary actions */
+.trainer-platform-layout .primary,
+.trainer-platform-layout .gold-button,
+.trainer-platform-layout .dashboard-action.primary,
+.trainer-platform-layout .dashboard-refresh,
+.trainer-platform-layout .clients-refresh,
+.trainer-platform-layout .modal-save-button,
+.trainer-platform-layout .approve-subscription-button,
+.trainer-platform-layout .resume-subscription-button,
+.trainer-platform-layout .admin-chat-form button {
+  color: #071018 !important;
+  background: linear-gradient(135deg,var(--tp-cyan),#19BDD1) !important;
+  border: 0 !important;
+  box-shadow: 0 10px 28px rgba(0,229,255,.14) !important;
+  font-weight: 800;
+}
+
+.trainer-platform-layout .primary:hover,
+.trainer-platform-layout .gold-button:hover,
+.trainer-platform-layout .dashboard-action.primary:hover,
+.trainer-platform-layout .dashboard-refresh:hover,
+.trainer-platform-layout .clients-refresh:hover,
+.trainer-platform-layout .approve-subscription-button:hover,
+.trainer-platform-layout .resume-subscription-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* Secondary actions */
+.trainer-platform-layout button:not(.primary):not(.gold-button):not(.danger-button):not(.delete-button):not(.approve-subscription-button):not(.resume-subscription-button),
+.trainer-platform-layout .edit-button,
+.trainer-platform-layout .dark-button,
+.trainer-platform-layout .modal-cancel-button,
+.trainer-platform-layout .subscription-filter-reset {
+  background: rgba(23,30,46,.88) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid var(--tp-border) !important;
+  border-radius: 12px;
+}
+
+.trainer-platform-layout .danger-button,
+.trainer-platform-layout .delete-button,
+.trainer-platform-layout .reject-subscription-button,
+.trainer-platform-layout .pause-subscription-button {
+  color: #fff !important;
+  background: linear-gradient(135deg,var(--tp-pink),#D60068) !important;
+  border: 0 !important;
+}
+
+.trainer-platform-layout .visibility-button,
+.trainer-platform-layout .edit-button {
+  border-color: rgba(0,229,255,.2) !important;
+}
+
+/* Inputs */
+.trainer-platform-layout input,
+.trainer-platform-layout textarea,
+.trainer-platform-layout select,
+.trainer-platform-layout .admin-chat-select {
+  background: #0E1523 !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(148,163,184,.2) !important;
+  border-radius: 13px !important;
+  outline: none;
+}
+
+.trainer-platform-layout input:focus,
+.trainer-platform-layout textarea:focus,
+.trainer-platform-layout select:focus {
+  border-color: rgba(0,229,255,.65) !important;
+  box-shadow: 0 0 0 3px rgba(0,229,255,.08) !important;
+}
+
+/* Tables / lists */
+.trainer-platform-layout .dashboard-table th,
+.trainer-platform-layout .dashboard-table td {
+  border-color: var(--tp-border) !important;
+  color: #E2E8F0 !important;
+}
+
+.trainer-platform-layout .dashboard-table th {
+  color: var(--tp-cyan) !important;
+  background: rgba(0,229,255,.035) !important;
+}
+
+.trainer-platform-layout .dashboard-table tr:hover td {
+  background: rgba(0,229,255,.025) !important;
+}
+
+/* Progress / status */
+.trainer-platform-layout .dashboard-status-track,
+.trainer-platform-layout .dashboard-popular-track,
+.trainer-platform-layout .dashboard-activity-bar-wrap {
+  background: #0B1220 !important;
+}
+
+.trainer-platform-layout .dashboard-status-progress,
+.trainer-platform-layout .dashboard-popular-fill,
+.trainer-platform-layout .dashboard-activity-bar {
+  background: linear-gradient(90deg,var(--tp-cyan),var(--tp-green)) !important;
+}
+
+.trainer-platform-layout .active,
+.trainer-platform-layout .status-active {
+  color: var(--tp-green) !important;
+}
+
+.trainer-platform-layout .pending,
+.trainer-platform-layout .status-pending {
+  color: #FACC15 !important;
+}
+
+.trainer-platform-layout .expired,
+.trainer-platform-layout .status-expired,
+.trainer-platform-layout .rejected,
+.trainer-platform-layout .status-rejected {
+  color: var(--tp-pink) !important;
+}
+
+.trainer-platform-layout .paused,
+.trainer-platform-layout .status-paused {
+  color: #FB923C !important;
+}
+
+/* Modals */
+.trainer-platform-layout .transformation-modal-backdrop,
+.trainer-platform-layout .modal-backdrop {
+  background: rgba(3,7,18,.78) !important;
+  backdrop-filter: blur(8px);
+}
+
+.trainer-platform-layout .transformation-modal,
+.trainer-platform-layout .package-form-box,
+.trainer-platform-layout .modal-content,
+.trainer-platform-layout .admin-chat-box {
+  background: #111827 !important;
+  color: var(--tp-text) !important;
+  border: 1px solid rgba(0,229,255,.14) !important;
+}
+
+/* Chat */
+.trainer-platform-layout .admin-chat-messages {
+  background: #0E1523 !important;
+  border-color: var(--tp-border) !important;
+}
+
+.trainer-platform-layout .admin-message-bubble {
+  background: #202A3D !important;
+  color: #F8FAFC !important;
+  border: 1px solid var(--tp-border);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .trainer-platform-layout .admin-sidebar {
+    width: 82px !important;
+  }
+
+  .trainer-platform-layout .admin-brand-text,
+  .trainer-platform-layout .admin-profile > div:last-child,
+  .trainer-platform-layout .admin-nav-title,
+  .trainer-platform-layout .admin-sidebar-link > span:last-child,
+  .trainer-platform-layout .admin-logout-button > span:last-child {
+    display: none !important;
+  }
+
+  .trainer-platform-layout .admin-sidebar-link {
+    justify-content: center;
+    margin-inline: 8px;
+  }
+
+  .trainer-platform-layout .admin-main-content {
+    margin-right: 82px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .trainer-platform-layout .admin-sidebar {
+    display: none !important;
+  }
+
+  .trainer-platform-layout .admin-main-content {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .trainer-platform-layout .dashboard-page,
+  .trainer-platform-layout .clients-page,
+  .trainer-platform-layout .packages-page,
+  .trainer-platform-layout .training-page,
+  .trainer-platform-layout .subscription-requests-page,
+  .trainer-platform-layout .admin-chat-page {
+    padding: 16px !important;
+  }
+
+  .trainer-platform-layout .dashboard-stat-card,
+  .trainer-platform-layout .dashboard-finance-card,
+  .trainer-platform-layout .client-card,
+  .trainer-platform-layout .package-card,
+  .trainer-platform-layout .subscription-request-card {
+    border-radius: 18px !important;
+  }
+}

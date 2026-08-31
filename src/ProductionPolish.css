@@ -1,0 +1,123 @@
+/* =========================================================
+   GYM COACH — PRODUCTION POLISH
+   Final shared layer: accessibility, responsive safety, surfaces.
+   ========================================================= */
+:root {
+  --fc-bg: #0B0F19;
+  --fc-surface: #111827;
+  --fc-surface-2: #171E2E;
+  --fc-cyan: #00E5FF;
+  --fc-pink: #FF007F;
+  --fc-green: #39FF14;
+  --fc-text: #F8FAFC;
+  --fc-muted: #94A3B8;
+  --fc-border: rgba(148,163,184,.16);
+  --fc-radius: 16px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--fc-bg); color: var(--fc-text); }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+img, video { max-width: 100%; }
+input, textarea, select { max-width: 100%; }
+
+:focus-visible {
+  outline: 2px solid var(--fc-cyan);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .admin-main-content,
+  .client-main-content { min-width: 0; }
+  .dashboard-page,
+  .clients-page,
+  .packages-page,
+  .subscription-requests-page,
+  .transformations-page,
+  .client-dashboard-page,
+  .client-training-page,
+  .client-nutrition-page,
+  .client-packages-page,
+  .client-subscriptions-page,
+  .client-chat-page { min-width: 0; }
+}
+
+@media (max-width: 760px) {
+  .dashboard-header,
+  .clients-header,
+  .packages-page-header,
+  .subscription-requests-header,
+  .admin-chat-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .dashboard-stat-grid,
+  .dashboard-finance-grid,
+  .dashboard-panels-grid,
+  .clients-grid,
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-table-wrapper,
+  .clients-table-wrapper,
+  .packages-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal,
+  .modal-content,
+  .dialog,
+  .form-modal {
+    max-width: calc(100vw - 24px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard-page,
+  .clients-page,
+  .packages-page,
+  .subscription-requests-page,
+  .admin-chat-page,
+  .client-dashboard-page,
+  .client-training-page,
+  .client-nutrition-page,
+  .client-packages-page,
+  .client-subscriptions-page,
+  .client-chat-page {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .dashboard-stat-card,
+  .dashboard-finance-card,
+  .dashboard-panel,
+  .client-card,
+  .package-card,
+  .subscription-request-card {
+    border-radius: 16px !important;
+  }
+
+  .dashboard-action-buttons { width: 100%; }
+  .dashboard-action-buttons > * { flex: 1 1 100%; }
+
+  .notification-panel,
+  .dashboard-notification-panel {
+    left: 8px !important;
+    right: 8px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

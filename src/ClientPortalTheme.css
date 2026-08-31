@@ -1,0 +1,860 @@
+/* =========================================================
+   FITCOACH — CLIENT PORTAL / PHASE 2
+   Unified Cyber Navy + Cyan + Neon Green + Pink
+   Visual-only layer. No API or business logic changes.
+   Loaded after all existing styles so it becomes the final layer.
+   ========================================================= */
+
+.client-layout {
+  --cp-bg: #0B0F19;
+  --cp-surface: #171E2E;
+  --cp-surface-2: #111827;
+  --cp-cyan: #00E5FF;
+  --cp-cyan-soft: #67EEFF;
+  --cp-green: #39FF14;
+  --cp-pink: #FF007F;
+  --cp-text: #FFFFFF;
+  --cp-muted: #94A3B8;
+  --cp-border: rgba(148, 163, 184, .16);
+  --cp-border-cyan: rgba(0, 229, 255, .28);
+  --cp-border-pink: rgba(255, 0, 127, .32);
+  --cp-radius: 16px;
+  --cp-radius-sm: 11px;
+  --cp-shadow: 0 18px 45px rgba(0, 0, 0, .25);
+
+  background: var(--cp-bg) !important;
+  color: var(--cp-text) !important;
+}
+
+.client-layout,
+.client-main,
+.client-main-content,
+.client-dashboard-page,
+.client-training-page,
+.client-nutrition-page,
+.client-packages-page,
+.client-subscriptions-page,
+.client-chat-page,
+.client-progress-page,
+.client-placeholder-page {
+  background: var(--cp-bg) !important;
+  color: var(--cp-text) !important;
+}
+
+.client-layout p,
+.client-layout small,
+.client-layout .program-description,
+.client-layout .exercise-description,
+.client-layout .client-dashboard-card p,
+.client-layout .client-dashboard-progress-info span,
+.client-layout .nutrition-meal-card p,
+.client-layout .package-description,
+.client-layout .package-features,
+.client-layout .subscription-detail span,
+.client-layout .client-chat-empty p {
+  color: var(--cp-muted) !important;
+}
+
+.client-layout h1,
+.client-layout h2,
+.client-layout h3,
+.client-layout h4,
+.client-layout strong {
+  color: var(--cp-text) !important;
+}
+
+/* =========================================================
+   SIDEBAR / MOBILE HEADER
+   ========================================================= */
+
+.client-sidebar {
+  width: 260px !important;
+  padding: 20px 16px !important;
+  background: linear-gradient(180deg, #111827 0%, #0B0F19 100%) !important;
+  border-left: 1px solid var(--cp-border) !important;
+  box-shadow: -18px 0 45px rgba(0,0,0,.25) !important;
+  scrollbar-color: #164451 transparent !important;
+}
+
+.client-sidebar::-webkit-scrollbar-thumb {
+  background: #164451 !important;
+}
+
+.client-sidebar-logo {
+  padding-bottom: 18px !important;
+  border-bottom-color: var(--cp-border) !important;
+}
+
+.client-logo-mark {
+  background: linear-gradient(135deg, var(--cp-cyan), #087f91) !important;
+  color: #061017 !important;
+  box-shadow: 0 8px 24px rgba(0,229,255,.16) !important;
+}
+
+.client-logo-text strong { color: #fff !important; }
+.client-logo-text span { color: var(--cp-cyan) !important; }
+
+.client-sidebar-user {
+  padding: 18px 6px !important;
+}
+
+.client-sidebar-avatar,
+.client-avatar {
+  background: linear-gradient(135deg, #122433, #0E1724) !important;
+  border-color: var(--cp-border-cyan) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-sidebar-user-info span,
+.client-mobile-user span {
+  color: var(--cp-muted) !important;
+}
+
+.client-nav-title {
+  color: #64748B !important;
+}
+
+.client-nav-link {
+  color: #CBD5E1 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  margin: 3px 0 !important;
+}
+
+.client-nav-link .client-nav-icon {
+  color: #94A3B8 !important;
+}
+
+.client-nav-link:hover {
+  color: #fff !important;
+  background: rgba(0,229,255,.055) !important;
+  border-color: rgba(0,229,255,.12) !important;
+}
+
+.client-nav-link:hover .client-nav-icon,
+.client-nav-link.active,
+.client-nav-link.active .client-nav-icon {
+  color: var(--cp-cyan) !important;
+}
+
+.client-nav-link.active {
+  background: linear-gradient(90deg, rgba(0,229,255,.12), rgba(0,229,255,.035)) !important;
+  border-color: rgba(0,229,255,.22) !important;
+  box-shadow: inset 3px 0 0 var(--cp-cyan) !important;
+}
+
+.client-nav-badge {
+  background: rgba(255,0,127,.12) !important;
+  color: #ff66b3 !important;
+  border: 1px solid rgba(255,0,127,.25) !important;
+}
+
+.client-coach-card {
+  background: #111827 !important;
+  border: 1px solid var(--cp-border) !important;
+  border-radius: 14px !important;
+}
+
+.client-coach-icon {
+  background: rgba(0,229,255,.09) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-coach-card span { color: var(--cp-muted) !important; }
+
+.client-logout-button {
+  background: rgba(255,0,127,.06) !important;
+  color: #ff66b3 !important;
+  border: 1px solid rgba(255,0,127,.22) !important;
+  border-radius: 12px !important;
+}
+
+.client-logout-button:hover {
+  background: rgba(255,0,127,.12) !important;
+  border-color: rgba(255,0,127,.42) !important;
+}
+
+.client-mobile-header {
+  background: #111827 !important;
+  border-bottom: 1px solid var(--cp-border) !important;
+}
+
+.client-mobile-brand { color: #fff !important; }
+.client-mobile-brand strong { color: var(--cp-cyan) !important; }
+
+/* =========================================================
+   MAIN / SHARED CARDS
+   ========================================================= */
+
+.client-main {
+  margin-right: 260px !important;
+  min-height: 100vh !important;
+}
+
+.client-main-content {
+  max-width: 1480px !important;
+  margin: 0 auto !important;
+  padding: 28px !important;
+}
+
+.client-layout button,
+.client-layout a,
+.client-layout input,
+.client-layout textarea,
+.client-layout select {
+  font-family: inherit !important;
+}
+
+.client-layout button,
+.client-layout .luxury-button,
+.client-layout .choose-package-button,
+.client-layout .package-button {
+  border-radius: var(--cp-radius-sm) !important;
+}
+
+.client-layout input,
+.client-layout textarea,
+.client-layout select {
+  background: #0F172A !important;
+  color: #fff !important;
+  border: 1px solid var(--cp-border) !important;
+}
+
+.client-layout input:focus,
+.client-layout textarea:focus,
+.client-layout select:focus {
+  border-color: var(--cp-cyan) !important;
+  box-shadow: 0 0 0 3px rgba(0,229,255,.08) !important;
+  outline: none !important;
+}
+
+.client-layout ::placeholder { color: #64748B !important; }
+
+/* =========================================================
+   CLIENT HOME
+   ========================================================= */
+
+.client-dashboard-page {
+  min-height: calc(100vh - 40px) !important;
+}
+
+.client-dashboard-hero {
+  background:
+    linear-gradient(135deg, rgba(23,30,46,.98), rgba(15,23,42,.96)) !important;
+  border: 1px solid var(--cp-border-cyan) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--cp-shadow) !important;
+  overflow: hidden !important;
+}
+
+.client-dashboard-hero::before {
+  background: radial-gradient(circle, rgba(0,229,255,.12), transparent 65%) !important;
+}
+
+.client-dashboard-eyebrow,
+.client-dashboard-section-header > div > span,
+.client-dashboard-progress-heading span {
+  color: var(--cp-cyan) !important;
+  letter-spacing: 1.5px !important;
+}
+
+.client-dashboard-hero h1 {
+  color: #fff !important;
+}
+
+.client-dashboard-hero p { color: var(--cp-muted) !important; }
+
+.client-dashboard-hero .client-status-dot,
+.client-dashboard-status .client-status-dot {
+  background: var(--cp-green) !important;
+  box-shadow: 0 0 12px rgba(57,255,20,.35) !important;
+}
+
+.client-dashboard-stats {
+  gap: 14px !important;
+}
+
+.client-dashboard-stat,
+.client-dashboard-card,
+.client-dashboard-progress,
+.client-dashboard-no-progress {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border: 1px solid var(--cp-border) !important;
+  border-radius: var(--cp-radius) !important;
+  box-shadow: none !important;
+}
+
+.client-dashboard-stat:hover,
+.client-dashboard-card:hover {
+  border-color: rgba(0,229,255,.32) !important;
+  transform: translateY(-2px);
+}
+
+.client-dashboard-stat-icon,
+.client-dashboard-card-icon {
+  background: rgba(0,229,255,.08) !important;
+  border: 1px solid rgba(0,229,255,.18) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-dashboard-stat-content strong {
+  color: #fff !important;
+}
+
+.client-dashboard-stat-content span {
+  color: var(--cp-muted) !important;
+}
+
+.client-dashboard-card h3 { color: #fff !important; }
+.client-dashboard-card-icon { box-shadow: none !important; }
+.client-dashboard-card-arrow { color: var(--cp-cyan) !important; }
+.client-subscription-inline { color: var(--cp-green) !important; }
+
+.client-dashboard-progress-heading h2 { color: #fff !important; }
+.client-dashboard-progress-percentage { color: var(--cp-cyan) !important; }
+
+.client-dashboard-progress-bar {
+  background: #0B0F19 !important;
+  border: 1px solid var(--cp-border) !important;
+}
+
+.client-dashboard-progress-bar > span {
+  background: linear-gradient(90deg, var(--cp-cyan), #19c8dc) !important;
+  box-shadow: 0 0 14px rgba(0,229,255,.25) !important;
+}
+
+.client-dashboard-progress-info strong { color: #fff !important; }
+
+.client-dashboard-no-progress {
+  border-color: rgba(255,0,127,.22) !important;
+}
+
+.client-dashboard-no-progress a {
+  background: var(--cp-pink) !important;
+  color: #fff !important;
+  border-color: var(--cp-pink) !important;
+}
+
+.client-dashboard-status {
+  color: var(--cp-muted) !important;
+}
+
+/* =========================================================
+   TRAINING PAGE
+   ========================================================= */
+
+.client-training-page {
+  background: var(--cp-bg) !important;
+  color: #fff !important;
+}
+
+.client-training-page .client-header,
+.client-training-page .program-info-card,
+.client-training-page .client-day-card,
+.client-training-page .client-exercise-card,
+.client-training-page .client-training-content,
+.client-training-page .week-card,
+.client-training-page .program-hero,
+.client-training-page .exercise-card {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border-color: var(--cp-border) !important;
+  box-shadow: none !important;
+}
+
+.client-training-page .program-info-card,
+.client-training-page .client-day-card,
+.client-training-page .client-exercise-card {
+  border-radius: var(--cp-radius) !important;
+}
+
+.client-training-page .client-header h1,
+.client-training-page .program-info-card h2,
+.client-training-page .client-day-header h2,
+.client-training-page .client-exercise-card h3 {
+  color: #fff !important;
+}
+
+.client-training-page .luxury-eyebrow,
+.client-training-page .luxury-section-label,
+.client-training-page .luxury-exercise-label,
+.client-training-page .luxury-week-caption,
+.client-training-page .luxury-day-caption {
+  color: var(--cp-cyan) !important;
+}
+
+.client-training-page .program-status-badge,
+.client-training-page .program-percentage,
+.client-training-page .day-progress-percentage {
+  color: var(--cp-green) !important;
+}
+
+.client-training-page .luxury-gold-line {
+  background: var(--cp-cyan) !important;
+}
+
+.client-training-page .week-progress-container .progress-bar,
+.client-training-page .day-progress-container .progress-bar,
+.client-training-page .progress-bar {
+  background: #0B0F19 !important;
+  border: 1px solid var(--cp-border) !important;
+}
+
+.client-training-page .progress-bar-fill,
+.client-training-page .luxury-progress-fill,
+.client-training-page .day-progress-container .progress-bar-fill {
+  background: linear-gradient(90deg, var(--cp-cyan), #1dd8e8) !important;
+  box-shadow: none !important;
+}
+
+.client-training-page .luxury-exercise-number,
+.client-training-page .exercise-number {
+  background: #0F172A !important;
+  border: 1px solid rgba(0,229,255,.24) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-training-page .luxury-exercise-number.completed,
+.client-training-page .exercise-number.completed {
+  background: var(--cp-green) !important;
+  border-color: var(--cp-green) !important;
+  color: #071008 !important;
+}
+
+.client-training-page .detail-box,
+.client-training-page .luxury-detail-box {
+  background: #0F172A !important;
+  border: 1px solid var(--cp-border) !important;
+}
+
+.client-training-page .detail-box span,
+.client-training-page .luxury-detail-box span {
+  color: var(--cp-muted) !important;
+}
+
+.client-training-page .detail-box strong,
+.client-training-page .luxury-detail-box strong {
+  color: #fff !important;
+}
+
+.client-training-page .client-video-section,
+.client-training-page .luxury-video-section,
+.client-training-page .exercise-video-section {
+  background: #0B0F19 !important;
+  border-color: var(--cp-border) !important;
+}
+
+.client-training-page .video-icon {
+  background: rgba(0,229,255,.09) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-training-page .client-exercise-video,
+.client-training-page .exercise-video {
+  border-color: var(--cp-border) !important;
+}
+
+.client-training-page .exercise-complete-button {
+  background: transparent !important;
+  color: var(--cp-cyan) !important;
+  border: 1px solid rgba(0,229,255,.28) !important;
+}
+
+.client-training-page .exercise-complete-button:hover {
+  background: rgba(0,229,255,.08) !important;
+  border-color: var(--cp-cyan) !important;
+}
+
+.client-training-page .exercise-complete-button.completed {
+  background: var(--cp-green) !important;
+  border-color: var(--cp-green) !important;
+  color: #071008 !important;
+}
+
+.client-training-page .exercise-completed-badge {
+  background: rgba(57,255,20,.1) !important;
+  border: 1px solid rgba(57,255,20,.24) !important;
+  color: var(--cp-green) !important;
+}
+
+/* =========================================================
+   NUTRITION PAGE
+   ========================================================= */
+
+.client-nutrition-page {
+  background: var(--cp-bg) !important;
+}
+
+.client-nutrition-page .nutrition-header,
+.client-nutrition-page .nutrition-hero,
+.client-nutrition-page .nutrition-content,
+.client-nutrition-page .nutrition-meal-card,
+.client-nutrition-page .nutrition-empty,
+.client-nutrition-page .nutrition-plan-card,
+.client-nutrition-page .meal-card {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border: 1px solid var(--cp-border) !important;
+  border-radius: var(--cp-radius) !important;
+  box-shadow: none !important;
+}
+
+.client-nutrition-page .nutrition-brand span,
+.client-nutrition-page .premium-label,
+.client-nutrition-page .luxury-section-label {
+  color: var(--cp-cyan) !important;
+}
+
+.client-nutrition-page .nutrition-hero h1,
+.client-nutrition-page .nutrition-meal-card h3,
+.client-nutrition-page .nutrition-plan-card h3 {
+  color: #fff !important;
+}
+
+.client-nutrition-page .nutrition-meal-card strong,
+.client-nutrition-page .meal-info strong,
+.client-nutrition-page .nutrition-total strong {
+  color: var(--cp-cyan) !important;
+}
+
+.client-nutrition-page .nutrition-meal-card:hover,
+.client-nutrition-page .meal-card:hover {
+  border-color: rgba(0,229,255,.3) !important;
+}
+
+.client-nutrition-page .nutrition-loading,
+.client-nutrition-page .nutrition-error {
+  background: var(--cp-bg) !important;
+}
+
+.client-nutrition-page .loading-icon,
+.client-nutrition-page .nutrition-footer span:first-child,
+.client-nutrition-page .nutrition-footer b {
+  color: var(--cp-cyan) !important;
+}
+
+.client-nutrition-page .loading-spinner {
+  border-color: #171E2E !important;
+  border-top-color: var(--cp-cyan) !important;
+}
+
+.client-nutrition-page .nutrition-error .error-icon {
+  background: rgba(255,0,127,.12) !important;
+  border: 1px solid rgba(255,0,127,.28) !important;
+  color: #ff66b3 !important;
+}
+
+.client-nutrition-page .nutrition-error button {
+  background: var(--cp-pink) !important;
+  color: #fff !important;
+}
+
+/* =========================================================
+   PACKAGES
+   ========================================================= */
+
+.client-packages-page {
+  background: var(--cp-bg) !important;
+  color: #fff !important;
+}
+
+.client-packages-page .client-packages-header,
+.client-packages-page .packages-hero,
+.client-packages-page .client-packages-content,
+.client-packages-page .packages-empty,
+.client-package-card {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border-color: var(--cp-border) !important;
+  box-shadow: none !important;
+}
+
+.client-packages-page .client-packages-header,
+.client-packages-page .packages-hero,
+.client-package-card {
+  border-radius: var(--cp-radius) !important;
+}
+
+.client-packages-page .premium-label,
+.client-packages-page .gold-line {
+  color: var(--cp-cyan) !important;
+  background-color: var(--cp-cyan) !important;
+}
+
+.client-packages-page .packages-hero h1,
+.client-packages-page .client-package-card h2,
+.client-packages-page .client-package-card h3 {
+  color: #fff !important;
+}
+
+.client-packages-page .package-price strong,
+.client-packages-page .package-duration,
+.client-packages-page .package-icon {
+  color: var(--cp-cyan) !important;
+}
+
+.client-packages-page .client-package-card.featured {
+  border-color: rgba(0,229,255,.5) !important;
+  box-shadow: 0 0 0 1px rgba(0,229,255,.08), 0 18px 45px rgba(0,229,255,.08) !important;
+}
+
+.client-packages-page .featured-badge {
+  background: var(--cp-cyan) !important;
+  color: #061017 !important;
+}
+
+.client-packages-page .choose-package-button,
+.client-packages-page .package-button {
+  background: var(--cp-pink) !important;
+  border-color: var(--cp-pink) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.client-packages-page .choose-package-button:hover,
+.client-packages-page .package-button:hover {
+  background: #ff2a96 !important;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SUBSCRIPTIONS
+   ========================================================= */
+
+.client-subscriptions-page {
+  background: var(--cp-bg) !important;
+  color: #fff !important;
+}
+
+.client-subscriptions-page .subscriptions-page-header,
+.client-subscriptions-page .subscription-page-card,
+.client-subscriptions-page .client-subscription-card,
+.client-subscriptions-page .subscription-card {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border: 1px solid var(--cp-border) !important;
+  border-radius: var(--cp-radius) !important;
+  box-shadow: none !important;
+}
+
+.client-subscriptions-page .luxury-section-label,
+.client-subscriptions-page .subscription-card-header > span {
+  color: var(--cp-cyan) !important;
+}
+
+.client-subscriptions-page .subscription-crown,
+.client-subscriptions-page .subscription-status-icon {
+  background: rgba(0,229,255,.08) !important;
+  color: var(--cp-cyan) !important;
+  border-color: rgba(0,229,255,.2) !important;
+}
+
+.client-subscriptions-page .subscription-detail strong {
+  color: #fff !important;
+}
+
+.client-subscriptions-page .subscription-status-content {
+  border-color: rgba(57,255,20,.22) !important;
+}
+
+.client-subscriptions-page .status-active,
+.client-subscriptions-page .status-approved,
+.client-subscriptions-page .status-completed {
+  color: var(--cp-green) !important;
+  background: rgba(57,255,20,.08) !important;
+  border-color: rgba(57,255,20,.22) !important;
+}
+
+/* =========================================================
+   CHAT
+   ========================================================= */
+
+.client-chat-page {
+  background: var(--cp-bg) !important;
+  color: #fff !important;
+}
+
+.client-chat-page .client-chat-header,
+.client-chat-page .client-chat-messages,
+.client-chat-page .client-chat-form,
+.client-chat-page .client-chat-empty,
+.client-chat-page .client-chat-no-messages {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border-color: var(--cp-border) !important;
+}
+
+.client-chat-page .client-chat-header,
+.client-chat-page .client-chat-form,
+.client-chat-page .client-chat-empty {
+  border-radius: var(--cp-radius) !important;
+}
+
+.client-chat-page .client-chat-avatar {
+  background: rgba(0,229,255,.08) !important;
+  border: 1px solid rgba(0,229,255,.2) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-chat-page .client-chat-bubble {
+  background: #0F172A !important;
+  border: 1px solid var(--cp-border) !important;
+  color: #fff !important;
+}
+
+.client-chat-page .client-chat-message.me .client-chat-bubble,
+.client-chat-page .client-chat-message.sent .client-chat-bubble {
+  background: rgba(0,229,255,.1) !important;
+  border-color: rgba(0,229,255,.22) !important;
+}
+
+.client-chat-page textarea,
+.client-chat-page input {
+  background: #0F172A !important;
+  border-color: var(--cp-border) !important;
+}
+
+.client-chat-page button {
+  background: var(--cp-cyan) !important;
+  color: #061017 !important;
+  border-color: var(--cp-cyan) !important;
+  font-weight: 800 !important;
+}
+
+/* =========================================================
+   PROGRESS / PLACEHOLDER
+   ========================================================= */
+
+.client-progress-page,
+.client-placeholder-page {
+  background: var(--cp-bg) !important;
+  color: #fff !important;
+}
+
+.client-progress-page .client-progress-header,
+.client-progress-page .client-progress-main-card,
+.client-progress-page .client-progress-details > *,
+.client-progress-page .progress-card,
+.client-progress-page .client-progress-card {
+  background: linear-gradient(145deg, #171E2E, #111827) !important;
+  border-color: var(--cp-border) !important;
+  border-radius: var(--cp-radius) !important;
+  box-shadow: none !important;
+}
+
+.client-progress-page .client-progress-header h1,
+.client-progress-page .client-progress-main-card h2 {
+  color: #fff !important;
+}
+
+.client-progress-page .client-progress-circle {
+  border-color: rgba(0,229,255,.18) !important;
+  color: var(--cp-cyan) !important;
+}
+
+.client-progress-page .client-progress-circle::after {
+  border-color: var(--cp-cyan) !important;
+}
+
+.client-placeholder-page span,
+.client-placeholder-page h1 {
+  color: var(--cp-cyan) !important;
+}
+
+/* =========================================================
+   GLOBAL CLIENT STATUS / LINKS
+   ========================================================= */
+
+.client-layout .status-active,
+.client-layout .status-approved,
+.client-layout .status-completed {
+  color: var(--cp-green) !important;
+  background: rgba(57,255,20,.08) !important;
+  border-color: rgba(57,255,20,.22) !important;
+}
+
+.client-layout .status-pending,
+.client-layout .status-review {
+  color: var(--cp-pink) !important;
+  background: rgba(255,0,127,.08) !important;
+  border-color: rgba(255,0,127,.22) !important;
+}
+
+.client-layout a:not(.client-nav-link) {
+  color: var(--cp-cyan) !important;
+}
+
+.client-layout a:not(.client-nav-link):hover {
+  color: var(--cp-cyan-soft) !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .client-main {
+    margin-right: 0 !important;
+  }
+
+  .client-main-content {
+    padding: 18px !important;
+  }
+
+  .client-sidebar {
+    width: 235px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .client-main-content {
+    padding: 14px !important;
+  }
+
+  .client-dashboard-hero,
+  .client-dashboard-progress,
+  .client-dashboard-card,
+  .client-dashboard-stat,
+  .client-training-page .program-info-card,
+  .client-training-page .client-day-card,
+  .client-nutrition-page .nutrition-hero,
+  .client-nutrition-page .nutrition-meal-card,
+  .client-packages-page .packages-hero,
+  .client-package-card,
+  .client-subscriptions-page .subscription-page-card,
+  .client-chat-page .client-chat-header,
+  .client-chat-page .client-chat-form {
+    border-radius: 14px !important;
+  }
+
+  .client-dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .client-dashboard-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-main-content {
+    padding: 10px !important;
+  }
+
+  .client-dashboard-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .client-dashboard-progress-info {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .client-sidebar {
+    width: 220px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-layout *,
+  .client-layout *::before,
+  .client-layout *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

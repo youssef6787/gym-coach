@@ -1,0 +1,697 @@
+/* =========================================================
+   FITCOACH — TRAINER ADMIN LAYOUT
+   SIDEBAR WITH REAL INTERNAL SCROLL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.admin-layout {
+  --fc-bg: #0B0F19;
+  --fc-surface: #171E2E;
+  --fc-surface-2: #111827;
+  --fc-border: rgba(148, 163, 184, 0.15);
+  --fc-cyan: #00E5FF;
+  --fc-green: #39FF14;
+  --fc-pink: #FF007F;
+  --fc-white: #FFFFFF;
+  --fc-muted: #94A3B8;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: var(--fc-bg);
+  color: var(--fc-white);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  width: 255px;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 15px;
+
+  border-left: 1px solid var(--fc-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      #101827 0%,
+      #0B0F19 100%
+    );
+
+  box-shadow:
+    -18px 0 45px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+
+  min-height: 0;
+}
+
+
+/* =========================================================
+   BRAND
+   لا يتحرك مع القائمة
+========================================================= */
+
+.admin-sidebar-brand {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 5px 8px 20px;
+}
+
+
+.admin-brand-logo {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  color: #061019;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--fc-cyan),
+      #4ef0ff
+    );
+
+  font-weight: 1000;
+
+  box-shadow:
+    0 0 24px rgba(0, 229, 255, 0.18);
+}
+
+
+.admin-brand-text strong,
+.admin-brand-text span {
+  display: block;
+}
+
+
+.admin-brand-text strong {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+
+.admin-brand-text span {
+  margin-top: 1px;
+
+  color: var(--fc-cyan);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.25em;
+}
+
+
+/* =========================================================
+   PROFILE
+   لا يتحرك مع القائمة
+========================================================= */
+
+.admin-profile {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid var(--fc-border);
+
+  border-radius: 15px;
+
+  background:
+    rgba(23, 30, 46, 0.68);
+}
+
+
+.admin-profile-avatar {
+  width: 37px;
+  height: 37px;
+
+  flex: 0 0 37px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(0, 229, 255, 0.08);
+
+  border:
+    1px solid rgba(0, 229, 255, 0.18);
+}
+
+
+.admin-profile strong,
+.admin-profile span {
+  display: block;
+}
+
+
+.admin-profile strong {
+  font-size: 12px;
+}
+
+
+.admin-profile span {
+  margin-top: 3px;
+
+  color: var(--fc-muted);
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   منطقة القائمة
+   هذه هي أهم نقطة
+========================================================= */
+
+.admin-sidebar-nav {
+
+  /*
+    السماح للقائمة بأخذ المساحة المتبقية
+  */
+  flex: 1 1 0;
+
+  /*
+    ضروري جدًا مع flex
+  */
+  min-height: 0;
+
+  /*
+    منع القائمة من دفع تسجيل الخروج لأسفل
+  */
+  min-width: 0;
+
+  /*
+    SCROLL حقيقي
+  */
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /*
+    يمنع حركة الصفحة الرئيسية عند
+    الوصول لنهاية القائمة
+  */
+  overscroll-behavior: contain;
+
+  /*
+    شكل القائمة
+  */
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding:
+
+    2px 4px 12px 1px;
+
+  margin: 0;
+
+  /*
+    السماح للـ scrollbar بالظهور
+  */
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(0, 229, 255, 0.65)
+    rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   Chrome / Edge scrollbar
+========================================================= */
+
+.admin-sidebar-nav::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+.admin-sidebar-nav::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border-radius: 10px;
+}
+
+
+.admin-sidebar-nav::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      #00E5FF,
+      #008fa3
+    );
+
+  border-radius: 10px;
+
+  border:
+    1px solid rgba(0, 229, 255, 0.25);
+}
+
+
+.admin-sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #4ef0ff,
+      #00b8cc
+    );
+}
+
+
+/* =========================================================
+   عنوان القائمة
+========================================================= */
+
+.admin-nav-title {
+  flex: 0 0 auto;
+
+  padding:
+    0 10px 9px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   روابط القائمة
+========================================================= */
+
+.admin-sidebar-link {
+
+  position: relative;
+
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 48px;
+
+  padding:
+    12px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 12px;
+
+  color: #cbd5e1 !important;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.admin-sidebar-link:hover {
+
+  color: #fff !important;
+
+  background:
+    rgba(0, 229, 255, 0.045);
+
+  border-color:
+    rgba(0, 229, 255, 0.12);
+
+  transform:
+    translateX(-2px);
+}
+
+
+.admin-sidebar-link.active {
+
+  color:
+    var(--fc-cyan) !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 229, 255, 0.10),
+      rgba(0, 229, 255, 0.025)
+    );
+
+  border-color:
+    rgba(0, 229, 255, 0.22);
+
+  box-shadow:
+    inset -3px 0 0 var(--fc-cyan);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.admin-nav-icon {
+
+  width: 24px;
+  min-width: 24px;
+
+  text-align: center;
+
+  font-size: 15px;
+
+  filter:
+    saturate(0.8);
+}
+
+
+.admin-sidebar-link.active
+.admin-nav-icon {
+
+  filter: none;
+}
+
+
+/* =========================================================
+   BOTTOM / LOGOUT
+   ثابت أسفل القائمة
+========================================================= */
+
+.admin-sidebar-bottom {
+
+  flex: 0 0 auto;
+
+  margin-top: 0;
+
+  padding-top: 4px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 15, 25, 0.75),
+      #0B0F19 25%
+    );
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.admin-sidebar-divider {
+
+  width: calc(100% - 8px);
+
+  height: 1px;
+
+  background:
+    var(--fc-border);
+
+  margin:
+    10px 4px 15px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.admin-logout-button {
+
+  width: 100%;
+
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px;
+
+  border:
+    1px solid rgba(255, 0, 127, 0.2);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 0, 127, 0.035);
+
+  color:
+    #ff8abf;
+
+  cursor: pointer;
+
+  font: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.admin-logout-button:hover {
+
+  border-color:
+    rgba(255, 0, 127, 0.5);
+
+  background:
+    rgba(255, 0, 127, 0.08);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.admin-main-content {
+
+  width:
+    calc(100% - 255px);
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  margin-right:
+    255px;
+
+  background:
+    #0B0F19;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-sidebar {
+
+    width: 215px;
+  }
+
+
+  .admin-main-content {
+
+    width:
+      calc(100% - 215px);
+
+    margin-right:
+      215px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-layout {
+
+    display: block;
+
+    min-height: 100vh;
+  }
+
+
+  .admin-sidebar {
+
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 100dvh;
+
+    max-height: none;
+
+    border-left: 0;
+
+    border-bottom:
+      1px solid var(--fc-border);
+
+    overflow: visible;
+  }
+
+
+  /*
+    على الهاتف نجعل القائمة لها
+    ارتفاع محدد حتى تعمل كـ scroll
+  */
+
+  .admin-sidebar-nav {
+
+    flex:
+      0 0 auto;
+
+    height:
+      280px;
+
+    min-height:
+      280px;
+
+    max-height:
+      280px;
+
+    overflow-y:
+      scroll;
+
+    overflow-x:
+      hidden;
+  }
+
+
+  .admin-sidebar-bottom {
+
+    flex:
+      0 0 auto;
+  }
+
+
+  .admin-main-content {
+
+    width: 100%;
+
+    margin-right: 0;
+
+    min-height: 100vh;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .admin-sidebar {
+
+    padding:
+      16px 12px;
+  }
+
+
+  .admin-sidebar-nav {
+
+    height:
+      260px;
+
+    min-height:
+      260px;
+
+    max-height:
+      260px;
+  }
+}
